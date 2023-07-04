@@ -4,12 +4,20 @@ app=Flask(__name__)
 
 
 
-#test server 
-@app.route("/")  
+
+@app.route("/")  #test server 
 def index():
     return render_template("index.html")
 
-def pagina_no_encontrada(error):
+
+
+@app.route("/login")   #login user
+def login():
+    return render_template("auth/login.html") 
+
+
+
+def pagina_no_encontrada(error):  #error 404 
     return render_template("errores/404.html"), 404
 
 
